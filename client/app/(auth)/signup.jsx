@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert,Image } from "react-native";
 import { Link, useRouter } from "expo-router";
 import axios from "axios";
 import { API_URI } from "../../constants/config";
@@ -60,8 +60,10 @@ export default function SignupScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.container} >
       <Text style={styles.title}>Sign Up</Text>
+     
+
       <Text style={styles.subtitle}>Create your account</Text>
 
       {/* Input Fields */}
@@ -129,50 +131,62 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     paddingHorizontal: 24,
-    backgroundColor: "#f9fafc",
+    backgroundColor: "#ffffff", // Changed to white background
+    paddingLeft: 45,
+    paddingRight: 45,
+    alignItems: "center",
   },
   title: {
     fontSize: 34,
     fontWeight: "bold",
-    color: "#2563eb",
+    color: "#FF7F00",
     textAlign: "center",
     marginBottom: 8,
+    textShadowColor: 'rgba(255, 127, 0, 0.2)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 4,
   },
   subtitle: {
     fontSize: 16,
-    color: "#6b7280",
+    color: "#666666",
     textAlign: "center",
     marginBottom: 28,
   },
   input: {
     width: "100%",
-    backgroundColor: "#fff",
-    borderColor: "#d1d5db",
+    backgroundColor: "#F8F8F8",
+    borderColor: "#FFE5CC",
     borderWidth: 1,
     borderRadius: 12,
     paddingVertical: 12,
     paddingHorizontal: 16,
     fontSize: 16,
-    color: "#111827",
+    color: "#333333",
     marginBottom: 14,
-    shadowColor: "#000",
-    shadowOpacity: 0.05,
-    shadowRadius: 3,
+    shadowColor: "#FFB366",
+    shadowOpacity: 0.1,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 8,
     elevation: 2,
   },
   button: {
-    backgroundColor: "#2563eb",
+    backgroundColor: "#FF7F00",
     paddingVertical: 14,
     borderRadius: 12,
     alignItems: "center",
     marginTop: 10,
-    elevation: 2,
+    width: "100%",
+    shadowColor: "#FF7F00",
+    shadowOpacity: 0.3,
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 8,
+    elevation: 4,
   },
   buttonDisabled: {
-    backgroundColor: "#93c5fd",
+    backgroundColor: "#FFB366",
   },
   buttonText: {
-    color: "#fff",
+    color: "#FFFFFF",
     fontSize: 17,
     fontWeight: "600",
   },
@@ -182,14 +196,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   linkTextLight: {
-    color: "#6b7280",
+    color: "#666666",
     fontSize: 15,
   },
   link: {
     marginLeft: 5,
   },
   linkText: {
-    color: "#2563eb",
+    color: "#FF7F00",
     fontWeight: "600",
     fontSize: 15,
   },
